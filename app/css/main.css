@@ -22,18 +22,7 @@ width: 200px;
 height: 100%;
 z-index: 2;
 box-shadow: 0 0 1.3vh black;
-/*border-right-style: solid;
-border-right-width: 1px;
-border-right-color: rgb(215, 215, 215);*/
-background: #677279; /* Old browsers */
-background: -moz-linear-gradient(top,  #677279 0%, #828c95 77%, #aaaaaa 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#677279), color-stop(77%,#828c95), color-stop(100%,#aaaaaa)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #677279 0%,#828c95 77%,#aaaaaa 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #677279 0%,#828c95 77%,#aaaaaa 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #677279 0%,#828c95 77%,#aaaaaa 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #677279 0%,#828c95 77%,#aaaaaa 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#677279', endColorstr='#aaaaaa',GradientType=0 ); /* IE6-9 */
-
+background: rgb(37, 119, 161);
 }
 
 .logo {
