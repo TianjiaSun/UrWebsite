@@ -13,126 +13,118 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-  <title>GAUSIAN Store</title>
+  <title>UrWebsites</title>
 </head>
 <body data-ng-controller="StoreListCtrl" data-ng-init="init()" style="overflow: hidden;">
 <div class="whole_container">
 
   <div id="category_container">
-    <div class="logo">GAUSIAN Store</div>
+    <div class="logo">Category</div>
     <div class="search_bar">
       <input class="search_bar_input" placeholder="Search..." ng-model="query" ng-keydown="Search($event)"></input>
       <div class="search_bar_bn" ng-click="ClickSearch()"></div>
     </div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Recommended')">Recommended</div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Business Tools')">Business Tools</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Administrative')">Administrative</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Advertising')">Advertising</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Analytics')">Analytics</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Collaborative')">Collaborative</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Customer Relationship')">Customer Relationship</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('e-Commerce')">e-Commerce</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Financial')">Financial</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Human Resource')">Human Resource</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Inventory')">Inventory</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Manufacturing')">Manufacturing</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Marketing')">Marketing</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Projects')">Projects</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Public Relationship')">Public Relationship</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Research')">Research</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Risk')">Risk</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Supplier')">Supplier</div>
-      <div class="main_navigator_h2" ng-click="filterCAT('Tax')">Tax</div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Productivity')">Productivity</div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Training')">Training</div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Utilities')">Utilities</div>
-    <div class="main_navigator_h1" ng-click="filterCAT('Developers')">Developers</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Advertising & Marketing</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Online Retail</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Wholesale</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Agency</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Distributor</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Restaurant & Cafe</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Club & Bar</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Beauty Industry</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Hotel</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Accounting Firm</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Consulting Firm</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Law Firm</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Electronics</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Manufacturing</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Transportation</div>
+    <div class="main_navigator_h2" ng-click="filterCAT('')">Auto Repair</div>
+    <div class="provide">Provide Website Templates</div>
   </div>
   
   <div id="list_container" hidden>
-    <div class="page_header">{{header}} ({{filterredApps.length}})</div>
-    <div ng-repeat="app in filterredApps | orderBy:'-certified'">
-      <div class="app_unit" ng-click="openApp(app)">
-        <img class="app_ad" src="{{app.ad}}"/>
-        <div class="app_gradient"></div>
-        <div class="app_mask"></div>
-        <div class="app_name">{{app.name}}</div>
-        <div class="app_brief">{{app.brief}}</div>
-        <div class="app_price">{{app.pricing}}</div>
-        <img class="app_icon" src="{{app.icon}}"/>
-        <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
-      </div>
-    </div>
-  </div>
-
-  <div id="search_container" hidden>
-    <div class="page_header">{{search_header}}</div>
-    <div ng-repeat="app in searchedApps | orderBy:'-certified'">
-      <div class="app_unit" ng-click="openApp(app)">
-        <img class="app_ad" src="{{app.ad}}"/>
-        <div class="app_gradient"></div>
-        <div class="app_mask"></div>
-        <div class="app_name">{{app.name}}</div>
-        <div class="app_brief">{{app.brief}}</div>
-        <div class="app_price">{{app.pricing}}</div>
-        <img class="app_icon" src="{{app.icon}}"/>
-        <img class="overlay_app_certified" ng-show="app.certified == 'true'" src="img/certified.png"/>
-      </div>
-    </div>
-  </div>
-
-  <div id="overlay_container" hidden>
-    <div class="overlay_close_x" ng-click="closeApp()"></div>
-    <div class="overlay_app_header">
-      <div class="overlay_app_header_name">{{app.name}} 
-        <span style="font-size: 14px;">(Direct Experience in Store)</span>
-      </div>
-    </div>
-    <div class="overlay_iframe_container">
-      <iframe
-        id="iframe_id"
-        class="full" 
-        frameBorder="0"
-        ng-src="{{app_path}}">
-      </iframe>
-      <div id="iframe_cover_before_loaded">
-        <div class="iframe_loading">
-          <div class="loader"></div>
+    <div class="page_header">Pick a website you love. We fit you in.</div>
+      
+      <div class="web_unit">
+        <div class="web_name">Plant Plans</div>
+        <div class="browser_container">
+          <img class="full" src="img/browser.png"/>
+          <img class="browser_img" src="img/web_1_browser.jpg"/>
         </div>
+        <div class="phone_container">
+          <img class="full" src="img/phone.png"/>
+          <img class="phone_img" src="img/web_1_phone.jpg"/>
+        </div>
+        <div class="web_price">FREE</div>
+        <div class="load_bn">Fit Me In</div>
       </div>
-    </div>
+
+      <div class="web_unit">
+        <div class="web_name">Lilou Paperie</div>
+        <div class="web_price">FREE</div>
+        <div class="browser_container">
+          <img class="full" src="img/browser.png"/>
+          <img class="browser_img" src="img/web_2_browser.jpg"/>
+        </div>
+        <div class="phone_container">
+          <img class="full" src="img/phone.png"/>
+          <img class="phone_img" src="img/web_2_phone.jpg"/>
+        </div>
+        <div class="load_bn">Fit Me In</div>
+      </div>
+
+      <div class="web_unit">
+        <div class="web_name">Sugar & Spice</div>
+        <div class="web_price">FREE</div>
+        <div class="browser_container">
+          <img class="full" src="img/browser.png"/>
+          <img class="browser_img" src="img/web_3_browser.jpg"/>
+        </div>
+        <div class="phone_container">
+          <img class="full" src="img/phone.png"/>
+          <img class="phone_img" src="img/web_3_phone.jpg"/>
+        </div>
+        <div class="load_bn">Fit Me In</div>
+      </div>
+
+      <div class="web_unit">
+        <div class="web_name">T-Market</div>
+        <div class="web_price">FREE</div>
+        <div class="browser_container">
+          <img class="full" src="img/browser.png"/>
+          <img class="browser_img" src="img/web_4_browser.jpg"/>
+        </div>
+        <div class="phone_container">
+          <img class="full" src="img/phone.png"/>
+          <img class="phone_img" src="img/web_4_phone.jpg"/>
+        </div>
+        <div class="load_bn">Fit Me In</div>
+      </div>
+
+      <div class="web_unit">
+        <div class="web_name">Lorenzi</div>
+        <div class="web_price">FREE</div>
+        <div class="browser_container">
+          <img class="full" src="img/browser.png"/>
+          <img class="browser_img" src="img/web_5_browser.jpg"/>
+        </div>
+        <div class="phone_container">
+          <img class="full" src="img/phone.png"/>
+          <img class="phone_img" src="img/web_5_phone.jpg"/>
+        </div>
+        <div class="load_bn">Fit Me In</div>
+      </div>
   </div>
 
-  <div id="movein_container" hidden>
-    <div class="overlay_close_x_2" ng-click="closeApp()"></div>
-    <div class="overlay_app_logo" >
-      <img class="overlay_app_img" src="{{app.icon}}"/>
-    </div>
-    <div class="overlay_name">{{app.name}}</div>
-    <div class="overlay_brief">{{app.brief}}</div>
-    <div class="overlay_side_price">FREE
-      <div class="overlay_side_get" ng-click="install_this_app()">GET</div>
-    </div>
-    <div class="overlay_review">
-      <div class="overlay_user_number">1,034 Users</div>
-      <span class="star-icon full">☆</span>
-      <span class="star-icon full">☆</span>
-      <span class="star-icon full">☆</span>
-      <span class="star-icon half">☆</span>
-      <span class="star-icon">☆</span>
-    </div>
-    <!-- <div class="overlay_related">Related APPs</div> -->
-  </div>
-
-
-    <script src="jquery-1.11.2.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/display.js"></script>
-    <script src="components/version/version.js"></script>
-    <script src="components/version/version-directive.js"></script>
-    <script src="components/version/interpolate-filter.js"></script>
+  <script src="jquery-1.11.2.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/display.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
 </div>
 </body>
 </html>
