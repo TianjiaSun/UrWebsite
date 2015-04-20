@@ -122,7 +122,7 @@ color: orange;
   position: relative;
   line-height: 3.3vh;
   padding-left: 7px;
-  margin-left: 20px;
+  margin-left: 11px;
   margin-right: 0px;
   border-color: #33CCFF;
   color: #EEEEEE;
@@ -161,45 +161,159 @@ overflow-x: hidden;
 
 .page_header {
 position: relative;
-  left: 10px;
-  top: 8px;
-  font-family: arial;
-  font-size: 22px;
-  margin-bottom: 5px;
-  color: #23538a;
-  font-weight: bold;
-  padding-bottom: 4px;
+left: 10px;
+top: 7px;
+font-family: arial;
+font-size: 26px;
+margin-bottom: 5px;
+color: #23538a;
+font-weight: bold;
+padding-bottom: 4px;
+width: 100%;
+text-align: center;
+padding-bottom: 10px;
 }
 
-.app_unit {
+.provide {
+position: absolute;
+bottom: 16px;
+font-family: arial;
+font-size: 13px;
+color: white;
+left: 0px;
+width: 200px;
+text-align: center;
+text-decoration: underline;
+}
+
+.web_unit {
 position: relative;
-  float: left;
-  width: calc(25vw - 86px);
-  min-width: 238px;
-  min-height: 172px;
-  height: 13vw;
-  margin: 12px;
-  background: rgb(219, 219, 219);
-  box-shadow: 0px 0px 1vh rgb(95, 95, 95);
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+float: left;
+width: calc(33.3vw - 136px);
+min-width: 310px;
+min-height: 310px;
+height: calc(33.3vw - 137px);
+margin: 28px;
+background: transparent;
+-webkit-transition: 0.3s ease-in-out;
+-moz-transition: 0.3s ease-in-out;
+-o-transition: 0.3s ease-in-out;
+transition: 0.3s ease-in-out;
+}
+
+.view_bn {
+position: absolute;
+bottom: 2px;
+left: 48px;
+height: 23px;
+width: 57px;
+background-color: rgb(63, 162, 212);
+border-radius: 5px;
+text-align: center;
+line-height: 23px;
+color: white;
+font-family: arial;
+font-size: 15px;
+}
+
+.load_bn {
+position: absolute;
+bottom: 2px;
+left: 50px;
+height: 23px;
+width: 100px;
+background-color: rgb(63, 162, 212);
+border-radius: 5px;
+text-align: center;
+line-height: 23px;
+color: white;
+font-family: arial;
+font-size: 15px;
+}
+
+.view_bn:hover {
+background: orange;
+cursor: pointer;
+}
+
+.load_bn:hover {
+background: orange;
+cursor: pointer;
+}
+
+
+
+.web_name {
+position: absolute;
+top: -2px;
+left: 0px;
+width: 100%;
+text-align: left;
+font-size: 17px;
+font-family: arial;
+color: rgb(109, 108, 108);
+height: 24px;
+line-height: 24px;
+}
+
+.web_price {
+position: absolute;
+bottom: 1px;
+left: 0px;
+height: 25px;
+text-align: left;
+font-size: 16px;
+font-family: arial;
+color: rgb(51,176,240);
+height: 23px;
+line-height: 23px;
+font-weight: bold;
+}
+
+.browser_container {
+position: absolute;
+top: 24px;
+left: 0px;
+width: 94%;
+height: calc(96% - 39px);
+background: transparent;
+}
+
+.browser_container:hover {
+  cursor: pointer;
+}
+
+.browser_img {
+position: absolute;
+top: 8.9%;
+left: 0.6%;
+width: 98.9%;
+height: 90%;
+}
+
+.phone_img {
+position: absolute;
+top: 11%;
+left: 6%;
+width: 88%;
+height: 78%;
+}
+
+.phone_container {
+position: absolute;
+bottom: 0px;
+right: 0px;
+width: 31%;
+height: 56%;
+background: transparent;
+}
+
+.phone_container:hover {
+  cursor: pointer;
 }
 
 .red {
 background: red;
-}
-
-.app_unit:hover {
-box-shadow: 0px 0px 1.3vh rgb(0, 0, 0);
-cursor: pointer;
--webkit-transform: scale(1.01) rotate(3deg);
--moz-transform: scale(1.01) rotate(3deg);
--o-transform: scale(1.01) rotate(3deg);
--ms-transform: scale(1.01) rotate(3deg);
-transform: scale(1.01) rotate(3deg);
-z-index: 1;
 }
 
 .app_ad {
@@ -459,6 +573,9 @@ opacity: 1;
 }
 
 .full {
+position: absolute;
+top: 0px;
+left: 0px;
 width: 100%;
 height: 100%;
 overflow: hidden;
